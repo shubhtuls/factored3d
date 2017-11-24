@@ -1,0 +1,14 @@
+*ipynb_checkpoints
+demo/data
+external
+utils/bbox_utils.c
+utils/build
+utils/bbox_utils.so
+renderer/blender/bpy
+cachedir
+*.ipynb
+*.pyc
+ipyNb
+torchNb
+.timedBar
+*Debug*
