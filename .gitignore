@@ -1,5 +1,6 @@
 *ipynb_checkpoints
 demo/data
+release_files
 external
 utils/bbox_utils.c
 utils/build
@@ -10,5 +11,6 @@ cachedir
 *.pyc
 ipyNb
 torchNb
+renderer/blender
 .timedBar
 *Debug*

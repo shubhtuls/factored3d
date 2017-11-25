@@ -9,7 +9,7 @@ import torch
 import torch.nn as nn
 import torchvision
 from . import net_blocks as nb
-from ..external.roi_pooling.modules import roi_pool_py as roi_pool
+from . import roi_pool_py as roi_pool
 #from oc3d.nnutils import roi_pooling
 import pdb
 

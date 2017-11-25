@@ -28,7 +28,10 @@ from ..utils import metrics
 
 from ..renderer import utils as render_utils
 
-flags.DEFINE_string('rendering_dir', '/data0/shubhtuls/code/oc3d/cachedir/rendering', 'Directory where intermittent renderings are saved')
+
+curr_path = osp.dirname(osp.abspath(__file__))
+cache_path = osp.join(curr_path, '..', 'cachedir')
+flags.DEFINE_string('rendering_dir', osp.join(cache_path, 'rendering'), 'Directory where intermittent renderings are saved')
 
 flags.DEFINE_integer('voxel_size', 32, 'Spatial dimension of shape voxels')
 flags.DEFINE_integer('n_voxel_layers', 5, 'Number of layers ')

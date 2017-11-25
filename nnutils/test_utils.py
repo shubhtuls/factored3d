@@ -17,8 +17,11 @@ from ..utils.visualizer import Visualizer
 #-------------- flags -------------#
 #----------------------------------#
 ## Flags for training
+curr_path = osp.dirname(osp.abspath(__file__))
+cache_path = osp.join(curr_path, '..', 'cachedir')
+
 flags.DEFINE_string('name', 'exp_name', 'Experiment Name')
-flags.DEFINE_string('cache_dir', '/data0/shubhtuls/code/oc3d/cachedir', 'Cachedir')
+flags.DEFINE_string('cache_dir', cache_path, 'Cachedir')
 flags.DEFINE_string('eval_set', 'val', 'which set to evaluate on')
 flags.DEFINE_integer('gpu_id', 0, 'Which gpu to use')
 
@@ -26,14 +29,15 @@ flags.DEFINE_integer('batch_size', 4, 'Size of minibatches')
 flags.DEFINE_integer('num_train_epoch', 0, 'Number of training iterations')
 flags.DEFINE_integer('n_data_workers', 4, 'Number of data loading workers')
 
+
 ## Flags for logging and snapshotting
-flags.DEFINE_string('checkpoint_dir', '/data0/shubhtuls/code/oc3d/cachedir/snapshots/',
+flags.DEFINE_string('checkpoint_dir', osp.join(cache_path, 'snapshots'),
                     'Directory where networks are saved')
 flags.DEFINE_string(
-    'results_vis_dir', '/data0/shubhtuls/code/oc3d/cachedir/results_vis',
+    'results_vis_dir', osp.join(cache_path, 'results_vis'),
     'Directory where intermittent results will be saved')
 flags.DEFINE_string(
-    'results_eval_dir', '/data0/shubhtuls/code/oc3d/cachedir/evaluation',
+    'results_eval_dir', osp.join(cache_path, 'evaluation'),
     'Directory where evaluation results will be saved')
 
 flags.DEFINE_boolean('save_visuals', False, 'Whether to save intermittent visuals')
