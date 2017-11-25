@@ -1,0 +1,8 @@
+# python requirements.
+pip>=9.0
+jupyter
+scipy
+numpy
+matplotlib
+python-gflags
+cython
