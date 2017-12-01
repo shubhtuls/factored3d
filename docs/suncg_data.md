@@ -16,8 +16,10 @@ cd ..
 wget https://people.eecs.berkeley.edu/~shubhtuls/cachedir/factored3d/layout.tar.gz
 tar -zxvf layout.tar.gz
 mv houseLayout layout
-```
 
+# Download meta-data
+wget https://people.eecs.berkeley.edu/~shubhtuls/cachedir/factored3d/ModelCategoryMappingEdited.csv
+```
 
 ### Physically-based Renderings
 To use the [physically-based renderings](http://pbrs.cs.princeton.edu/) provided by Zhang et. al., we need to download the images, associated camera viewpoints and depth images (for training the baseline).
