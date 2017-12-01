@@ -36,4 +36,18 @@ wget https://people.eecs.berkeley.edu/~shubhtuls/cachedir/factored3d/cachedir.ta
 wget https://people.eecs.berkeley.edu/~shubhtuls/cachedir/factored3d/blender.tar.gz && tar -xf blender.tar.gz && mv blender renderer/.
 ```
 
-### Dependencies
+### External Dependencies
+```
+mkdir external; cd external;
+# Python interface for binvox
+git clone https://github.com/dimatura/binvox-rw-py ./binvox
+
+# Piotr's toolbox
+git clone https://github.com/pdollar/toolbox ./toolbox
+
+# Edgeboxes code
+git clone https://github.com/pdollar/edges ./edges
+
+# SSC-Net code (used for computing voxelization for the baseline)
+git clone https://github.com/shurans/sscnet ./sscnet
+```
