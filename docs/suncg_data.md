@@ -8,6 +8,13 @@ To use the [physically-based renderings](http://pbrs.cs.princeton.edu/) provided
 
 ```
 cd SUNCG_DIR;
+
+# Download data splits
+mkdir splits
+cd splits
+wget https://people.eecs.berkeley.edu/~shubhtuls/cachedir/factored3d/suncg_split.pkl
+cd ..
+
 mkdir zipfiles; cd zipfiles;
 
 # Download camera viewpoints
