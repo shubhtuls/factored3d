@@ -2,7 +2,6 @@
 
 ```
 cd SUNCG_DIR;
-mkdir zipfiles; cd zipfiles;
 
 # Download the toolbox
 git clone https://github.com/shurans/SUNCGtoolbox ./toolbox

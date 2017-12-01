@@ -1,5 +1,5 @@
 // Source file for the scene image capture program
-
+// Code adapted from https://github.com/shurans/SUNCGtoolbox/tree/master/gaps
 
 
 ////////////////////////////////////////////////////////////////////////
