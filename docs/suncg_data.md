@@ -21,7 +21,13 @@ unzip mlt_v2.zip -d ../renderings_ldr
 # meta-data
 wget http://pbrs.cs.princeton.edu/pbrs_release/data/data_goodlist_v2.txt
 
-# Download depth images
+# Download layout data (suncg houses with objects removed)
+# we use this data to render the amodal depth
+wget https://people.eecs.berkeley.edu/~shubhtuls/cachedir/factored3d/layout.tar.gz
+tar -zxvf layout.tar.gz
+mv houseLayout ../layout
+
+# Download depth images (needed to train the depth baseline)
 wget http://pbrs.cs.princeton.edu/pbrs_release/data/depth_v2.zip
 unzip depth_v2.zip -d ../renderings_depth
 ```

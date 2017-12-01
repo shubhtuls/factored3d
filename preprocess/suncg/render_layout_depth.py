@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Example usage python render_node_indices.py --min=1 --nc=1
+# Example usage python render_layout_depth.py --min=1 --nc=1
 import argparse
 import os
 import os.path as osp
@@ -37,16 +37,17 @@ class renderingThread(threading.Thread):
         for ix in range(nMin-1, nMax):
             if(ix % nCores == self.c):
                 modelId = modelsAll[ix]
-                modelDir = osp.join(sunCgDir, 'house', modelId)
-                saveDir = osp.join(sunCgDir, 'renderings_node', modelId)
+                modelDir = osp.join(sunCgDir, 'layout', modelId)
+                saveDir = osp.join(sunCgDir, 'renderings_layout', modelId)
                 camFile = osp.join(sunCgDir, 'camera', modelId, 'room_camera.txt')
                 
                 if not os.path.exists(saveDir):
                     os.makedirs(saveDir)
-                renderFlags = '-capture_node_images'
+                renderFlags = '-capture_depth_images'
                 if args.mesa:
                     renderFlags += ' -mesa'
-                renderCommand = 'cd {}; {}/scn2img house.json {} {} {};'.format(modelDir, osp.join(toolboxDir, execFolder), renderFlags, camFile, saveDir)
+
+                renderCommand = 'cd {}; {}/scn2img layout.json {} {} {};'.format(modelDir, osp.join(toolboxDir, execFolder), renderFlags, camFile, saveDir)
 
                 os.system(renderCommand)
 
