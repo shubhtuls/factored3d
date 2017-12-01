@@ -17,3 +17,5 @@ make
 make mesa
 ```
 In case you compile with offscreen support, you might need to edit [this line](https://github.com/shurans/SUNCGtoolbox/blob/master/gaps/makefiles/Makefile.apps#L42) to specify additional lib directories if you're using a locally compiled version of mesa, and possibly also specify a CPLUS_INCLUDE_PATH. Though note that locally compiling mesa with offscreen support can get a bit tricky.
+
+Additionally, we will also need binvox to compute object voxelizations. Please download binvox from [here](http://www.patrickmin.com/binvox/) and store the binary as SUNCG_DIR/toolbox/binvox.
