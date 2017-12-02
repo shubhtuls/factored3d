@@ -1,8 +1,8 @@
 """Script for layout prediction predictor experiment.
 """
-# example usage (depth baseline) : python -m factored3d.experiments.suncg.layout --plot_scalars --display_visuals --save_epoch_freq=1 --batch_size=8 --name=depth_baseline --display_freq=2000 --suncg_dl_out_layout=false --suncg_dl_out_depth=true --display_id=20 --gpu_id=1
+# example usage (depth baseline) : python -m factored3d.experiments.suncg.layout --plot_scalars --display_visuals --save_epoch_freq=1 --batch_size=8 --name=depth_baseline --display_freq=2000 --suncg_dl_out_layout=false --suncg_dl_out_depth=true --display_id=20
 
-# example usage (layout prediction) : python -m factored3d.experiments.suncg.layout --plot_scalars --display_visuals --save_epoch_freq=1 --batch_size=8 --name=layout_pred --display_freq=2000 --suncg_dl_out_layout=true --suncg_dl_out_depth=false --display_id=40 --gpu_id=1
+# example usage (layout prediction) : python -m factored3d.experiments.suncg.layout --plot_scalars --display_visuals --save_epoch_freq=1 --batch_size=8 --name=layout_pred --display_freq=2000 --suncg_dl_out_layout=true --suncg_dl_out_depth=false --display_id=40
 
 from __future__ import absolute_import
 from __future__ import division
