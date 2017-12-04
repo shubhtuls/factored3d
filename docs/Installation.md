@@ -1,5 +1,9 @@
 # Installation Instructions
 
+Two overall comments:
+* The rendering of the results depends on blender. We provide a version, but if you have issues where the renderings don't show up or where the script cannot read the result images, you may have to compile blender and provide a bpy.so file that matches your precise system configuration.
+* You should run each of these commands in the main root directory. 
+
 ### We recommend using virtualenv:
 ```
 virtualenv venv
@@ -24,6 +28,7 @@ python setup.py build_ext --inplace
 mv factored3d/utils/bbox_utils.so ./
 rm -rf build/ # remove redundant folders
 rm -rf factored3d/ # remove redundant folders
+cd ..
 ```
 
 ### Download pre-trained models.
@@ -50,4 +55,5 @@ git clone https://github.com/pdollar/edges ./edges
 
 # SSC-Net code (used for computing voxelization for the baseline)
 git clone https://github.com/shurans/sscnet ./sscnet
+cd ..
 ```
