@@ -1,0 +1,7 @@
+@article{factored3dTulsiani17,
+  title={Factoring Shape, Pose, and Layout from the 2D Image of a 3D Scene},
+  author = {Shubham Tulsiani and Saurabh Gupta and David Fouhey and Alexei A. Efros and Jitendra Malik},
+  journal={arXiv},
+  year={2017}
+}
+

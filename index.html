@@ -1,0 +1,288 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:300;
+        font-size:18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+
+    h1 {
+        font-weight:300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr
+    {
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+</style>
+
+<html>
+  <head>
+        <title>Factored 3D</title>
+        <meta property="og:title" content="Factored 3D" />
+  </head>
+
+  <body>
+    <br>
+    <center>
+    <span style="font-size:42px">Factoring Shape, Pose, and Layout <br> from the 2D Image of a 3D Scene</span>
+    </center>
+
+    <br><br>
+      <table align=center width=900px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://www.cs.berkeley.edu/~shubhtuls/">Shubham Tulsiani</a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://www.cs.berkeley.edu/~sgupta/">Saurabh Gupta</a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://www.cs.berkeley.edu/~dfouhey/">David Fouhey</a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://www.eecs.berkeley.edu/~efros/">Alexei A. Efros</a></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://www.eecs.berkeley.edu/~malik/">Jitendra Malik</a></span>
+        </center>
+        </td>
+     </tr>
+    </table>
+
+    <br>
+    <table align=center width=700px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px">University of California, Berkeley</span>
+        </center>
+        </td>
+     </tr>
+    </table>
+
+            <br>
+            <table align=center width=900px>
+                <tr>
+                    <td width=600px>
+                      <center>
+                          <a href="./resources/images/teaser.png"><img src = "./resources/images/teaser.png" height="350px"></img></href></a><br>
+                    </center>
+                    </td>
+                </tr>
+                    <td width=600px>
+                      <center>
+                          <span style="font-size:14px"><i> <span style="font-weight:bold">Our 3D representation.</span> Given a single 2D image (a) we infer a 3D representation which is factored in terms of a set of objects inside an enclosed volume. We show it from the camera view in (b) and a novel view in (c). By virtue of being factored, our representation trivially enables answering questions that are impossible in other ones. For example, we can give the scene (d) without any objects; (e) without the table; or (f) answer "what would it be like if I moved the chair".</i>
+                    </center>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+            The goal of this work is to take a single 2D image of a scene and recover the 3D structure in terms of a small set of factors: a layout representing the enclosing surfaces as well as a set of objects represented in terms of shape and pose. We propose a convolutional neural network-based approach to predict this representation and benchmark it on a large dataset of indoor scenes. Our experiments evaluate a number of practical design questions, demonstrate that we can infer this representation, and quantitatively and qualitatively demonstrate its merits compared to alternate representations.
+            <br><br>
+          <hr>
+         <!-- <table align=center width=550px> -->
+            <table align=center width=650>
+             <center><h1>Paper</h1></center>
+                <tr>
+                    <!--<td width=300px align=left>-->
+                    <!-- <a href="http://arxiv.org/pdf/1603.08511.pdf"> -->
+                  <!-- <td><a href="#"><img class="layered-paper-big" style="height:175px" src="./resources/images/paper.png"/></a></td> -->
+                  <td><a href="#"><img style="height:180px" src="./resources/images/paper.png"/></a></td>
+                  <td><span style="font-size:14pt">Tulsiani, Gupta, Fouhey, Efros, Malik.<br><br>
+                          Factoring Shape, Pose, and Layout <br>from the 2D Image of a 3D Scene.<br><br>
+                  arXiv, Dec 2017.<br>
+                  <!-- [hosted on <a href="#">arXiv</a>]</a> -->
+                    </td>
+              </tr>
+            </table>
+          <br>
+
+          <table align=center width=180px>
+              <tr>
+                  <td><span style="font-size:14pt"><center>
+                      <a href="#">[pdf]</a>
+                    </center></td>
+
+                  <td><span style="font-size:14pt"><center>
+                      <a href="./resources/bibtex.txt">[Bibtex]</a>
+                    </center></td>
+              </tr>
+            </table>
+              <br>
+
+                <hr>
+
+         <center><h1>Code</h1></center>
+            <table align=center width=1000px>
+                <tr>
+                        <center>
+                          <a href='https://github.com/shubhtuls/factored3d'><img class="round" style="height:250" src="./resources/images/overview.png"/></a>
+                        </center>
+              </tr>
+          </table>
+
+            <table align=center width=800px>
+              <tr><center> <br>
+                <span style="font-size:28px">&nbsp;<a href='https://github.com/shubhtuls/factored3d'>[GitHub]</a>
+
+                <span style="font-size:28px"></a></span>
+              <br>
+              </center></tr>
+          </table>
+            <br>
+          <hr>
+
+          <center><h1>Results</h1></center>
+          <table align=center width=900px>
+              <tr>
+                  <td width=600px>
+                    <center>
+                        <a href="./resources/images/vis_comparison.png"><img src = "./resources/images/vis_comparison.png" height="350px"></img></href></a><br>
+                  </center>
+                  </td>
+              </tr>
+                  <td width=600px>
+                    <center>
+                        <span style="font-size:14px"><i> <span style="font-weight:bold">Qualitative comparison.</span> A visualization of the proposed (Factored) representation in comparison to (Voxels) a single voxel grid and (Depth) a depthmap. For each input image shown on the left, we show the various inferred representations from two views each: a) camera view (left), and b) a novel view (right).</i>
+                  </center>
+                  </td>
+              </tr>
+          </table>
+          <br>
+          <table align=center width=900px>
+              <tr>
+                  <td width=600px>
+                    <center>
+                        <a href="./resources/images/eval_comparison.png"><img src = "./resources/images/eval_comparison.png" height="170px"></img></href></a><br>
+                  </center>
+                  </td>
+              </tr>
+                  <td width=600px>
+                    <center>
+                        <span style="font-size:14px"><i> <span style="font-weight:bold">Quantitative comparison.</span> Analysis of the ability of various representations to capture different aspects of the whole scene. We compare our proposed factored representation against voxel or depth-based alternatives and evaluate their ability to capture the following aspects of the 3D scene (from left to right): a) Visible depth, b) Volumetric occupancy, c) Individual objects, d) Visible depth for scene surfaces (floor, walls etc.), and e) Amodal depth for scene surfaces.</i>
+                  </center>
+                  </td>
+              </tr>
+          </table>
+           <hr>
+
+            <table align=center width=1100px>
+                <tr>
+                    <td>
+                      <left>
+                <center><h1>Acknowledgements</h1></center>
+                This work was supported in part by Intel/NSF VEC award IIS-1539099, NSF Award IIS-1212798, and the Google Fellowship to SG. We gratefully acknowledge NVIDIA corporation for the donation of Tesla GPUs used for this research. This webpage template was borrowed from some <a href="https://richzhang.github.io/colorization/">colorful folks</a>.
+            </left>
+        </td>
+        </tr>
+        </table>
+
+        <br><br>
+</body>
+</html>
