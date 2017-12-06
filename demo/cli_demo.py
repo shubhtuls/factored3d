@@ -8,10 +8,10 @@ import scipy.io as sio
 import torch
 import matplotlib.pyplot as plt
 sys.path.append(osp.join(code_root, '..'))
-import gflags as flags
+from absl import flags
 from factored3d.demo import demo_utils
 
-flags.FLAGS('')
+flags.FLAGS(['demo'])
 opts = flags.FLAGS
 
 # do not change the options below

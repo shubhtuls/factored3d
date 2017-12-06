@@ -4,6 +4,6 @@ jupyter
 scipy
 numpy
 matplotlib
-python-gflags
+absl-py
 cython
 visdom
