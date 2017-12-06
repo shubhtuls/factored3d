@@ -7,8 +7,8 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-from google.apputils import app
-import gflags as flags
+from absl import app
+from absl import flags
 import os
 import os.path as osp
 import numpy as np
@@ -111,4 +111,4 @@ def main(_):
     trainer.train()
 
 if __name__ == '__main__':
-    app.run()
+    app.run(main)

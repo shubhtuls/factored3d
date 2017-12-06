@@ -4,7 +4,7 @@ Scene level voxels prediction net.
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-import gflags as flags
+from absl import flags
 import torch
 import torch.nn as nn
 from . import net_blocks as nb

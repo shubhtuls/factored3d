@@ -4,7 +4,7 @@ Loss building blocks.
 import torch
 import torch.nn as nn
 import math
-import gflags as flags
+from absl import flags
 
 #-------------- flags -------------#
 #----------------------------------#

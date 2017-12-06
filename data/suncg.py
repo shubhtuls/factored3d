@@ -10,7 +10,7 @@ import scipy.misc
 import scipy.linalg
 import scipy.io as sio
 import scipy.ndimage.interpolation
-import gflags as flags
+from absl import flags
 
 import torch
 from torch.utils.data import Dataset
