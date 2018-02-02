@@ -168,8 +168,8 @@ def select_ids(house_data, bbox_data, min_sum_dims=0, min_pixels=0, meta_loader=
     house_copy['levels'][0]['nodes'] = [room_node]
 
     bboxes = bbox_data['bboxes']
-    node_ids = bbox_data['node_ids']
-    n_pixels = bbox_data['n_pixels']
+    node_ids = bbox_data['ids']
+    n_pixels = bbox_data['nPixels']
     n_selected = 0
     selected_inds = []
     for ix in range(n_pixels.size):
