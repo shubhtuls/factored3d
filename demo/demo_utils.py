@@ -93,7 +93,7 @@ class DemoTester(test_utils.Tester):
         if opts.pred_voxels:
              self.voxel_decoder = copy.deepcopy(self.oc3d_model.code_predictor.shape_predictor.decoder)
 
-    def load_layout_model(self):
+    def load_depth_model(self):
         opts = self.opts
         ## Load depth prediction network
         self.depth_model = disp_net.dispnet()
@@ -103,7 +103,7 @@ class DemoTester(test_utils.Tester):
         self.depth_model.eval()
         self.depth_model = self.depth_model.cuda(device_id=self.opts.gpu_id)
 
-    def load_depth_model(self):
+    def load_layout_model(self):
         opts = self.opts
         self.layout_model = disp_net.dispnet()
         network_dir = osp.join(opts.cache_dir, 'snapshots', opts.layout_name)
