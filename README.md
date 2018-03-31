@@ -15,14 +15,14 @@ To train or evaluate the (trained/downloaded) models, it is first required to [d
 ### Citation
 If you use this code for your research, please consider citing:
 ```
-@article{factored3dTulsiani17,
+@inProceedings{factored3dTulsiani17,
   title={Factoring Shape, Pose, and Layout from the 2D Image of a 3D Scene},
   author = {Shubham Tulsiani
   and Saurabh Gupta
   and David Fouhey
   and Alexei A. Efros
   and Jitendra Malik},
-  journal={arXiv},
-  year={2017}
+  booktitle={Computer Vision and Pattern Regognition (CVPR)},
+  year={2018}
 }
 ```
