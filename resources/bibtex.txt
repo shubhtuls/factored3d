@@ -1,7 +1,10 @@
-@article{factored3dTulsiani17,
+@inProceedings{factored3dTulsiani17,
   title={Factoring Shape, Pose, and Layout from the 2D Image of a 3D Scene},
-  author = {Shubham Tulsiani and Saurabh Gupta and David Fouhey and Alexei A. Efros and Jitendra Malik},
-  journal={arXiv},
-  year={2017}
+  author = {Shubham Tulsiani
+  and Saurabh Gupta
+  and David Fouhey
+  and Alexei A. Efros
+  and Jitendra Malik},
+  booktitle={Computer Vision and Pattern Regognition (CVPR)},
+  year={2018}
 }
-
