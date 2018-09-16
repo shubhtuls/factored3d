@@ -25,7 +25,7 @@ python -m factored3d.experiments.suncg.box3d --plot_scalars --display_visuals --
 python -m factored3d.experiments.suncg.dwr --name=dwr_base --classify_rot --pred_voxels=False --use_context --plot_scalars --display_visuals --save_epoch_freq=1 --display_freq=1000 --display_id=100 --box3d_ft --shape_loss_wt=10 --label_loss_wt=10  --batch_size=8 --num_epochs=1
 
 # Finally, also learn to predict shape voxels instead of auto-encoder shape code
-python -m factored3d.experiments.suncg.dwr --name=dwr_shape_ft --classify_rot --pred_voxels=True --shape_dec_ft --use_context --plot_scalars --display_visuals --save_epoch_freq=1 --display_freq=1000 --display_id=100 --shape_loss_wt=10  --label_loss_wt=10 --batch_size=8 --ft_pretrain_epoch=1 --num_epochs=1
+python -m factored3d.experiments.suncg.dwr --name=dwr_shape_ft --classify_rot --pred_voxels=True --shape_dec_ft --use_context --plot_scalars --display_visuals --save_epoch_freq=1 --display_freq=1000 --display_id=100 --shape_loss_wt=2  --label_loss_wt=10 --batch_size=8 --ft_pretrain_epoch=1 --num_epochs=1
 ```
 
 We also train the layout (amodal inverse depth) prediction CNN
