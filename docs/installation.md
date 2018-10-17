@@ -1,7 +1,7 @@
 # Installation Instructions
 
 Two overall comments:
-* Result visualizations depend on blender. We provide a version, but if you have issues where the renderings don't show up or where the script cannot read the result images, you may have to compile blender and provide a bpy.so file that matches your precise system configuration. See [here](https://wiki.blender.org/index.php/User:Ideasman42/BlenderAsPyModule) for information about how to do this. The results by themselves do not depend on blender, and if you just want to results, you do not need blender.
+* Result visualizations depend on blender. We provide a version, but if you have issues where the renderings don't show up or where the script cannot read the result images, you may have to compile blender and provide a bpy.so file that matches your precise system configuration. See [here](https://wiki.blender.org/index.php/User:Ideasman42/BlenderAsPyModule) for information about how to do this. The results by themselves do not depend on blender, and if you just want to compute predictions, you do not need blender.
 * You should run each of these commands in the main root directory. 
 
 #### Setup virtualenv.
