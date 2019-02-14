@@ -20,6 +20,9 @@ make mesa
 ```
 In case you compile with offscreen support, you might need to edit [this line](https://github.com/shurans/SUNCGtoolbox/blob/master/gaps/makefiles/Makefile.apps#L42) to specify additional lib directories if you're using a locally compiled version of mesa, and possibly also specify a CPLUS_INCLUDE_PATH. Though note that locally compiling mesa with offscreen support can get a bit tricky.
 
+We highly recommend using the offscreen version, as otherwise the rendering behaviour is often stochastic.
+
+
 ### Rendering Layout and Node Images
 You'll first need to edit the 'sunCgDir' variable in both the python scripts below. Note that both the rendering jobs can take a while. If you managed to compile the gaps toolbox with offscreen mesa, you can add --mesa=True to the commands below, else you'll need to run the rendering jobs in an onscreen mode.
 ```
