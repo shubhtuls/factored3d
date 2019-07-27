@@ -3,6 +3,8 @@
 Shubham Tulsiani, Saurabh Gupta, David Fouhey, Alexei A. Efros, Jitendra Malik.
 
 [Project Page](https://shubhtuls.github.io/factored3d/)
+
+Note: Also see [3D-RelNet](https://github.com/nileshkulkarni/relative3d) that improves on this work by incporporating relationships among objects.
 ![Teaser Image](https://shubhtuls.github.io/factored3d/resources/images/overview.png)
 
 ## Demo and Pre-trained Models
